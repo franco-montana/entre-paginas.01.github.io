@@ -1,0 +1,287 @@
+/* -------------- VARIABLES CSS -------------- */
+:root {
+    /* -------------- COLORS ------------------*/
+    --white-color:hsl(0, 0%, 100%);
+    --black-color:hsl(0, 0%, 0%);
+    /* -------------- FONTS ------------------*/
+    --body-fonts: 'Clash Display', sans-serif;
+    /* -------------- FONTS SIZES ------------------*/
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    /* -------------- FONT WEIGHT ------------------*/
+    --font-semibold: 600;
+    --font-bold: 700;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Clash Display', sans-serif;
+    color: var(--black-color);
+    font-family: var(--body-fonts);
+    font-size: var(--normal-font-size);
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    font-family: var(--h2-font-size);
+    color: var(--white-color);
+}
+
+.logo {font-family: var(--font-bold);
+    font-size: var(--h1-font-size)
+
+}
+
+.header {
+    display: grid;
+    grid-column: row;
+    background-color: #4a2e69;
+    color: white;
+    padding: 10px;
+}
+
+
+/*====================================== XS SCREEN =========================================*/
+@media (min-width: 576px) and (max-width:578px){
+    .container-grid {
+    display: grid;
+    grid-template-areas: "header"
+                         "nav"
+                         "section"
+                         "footer";
+                         min-height: 100vh;
+                         }
+                         .header {
+                            grid-area: header;
+                         }
+                         .nav {
+                            grid-area: nav;
+                         }
+                         .section {
+                            grid-area: section;
+                         }
+                         .footer {
+                            grid-area: footer;
+                         }
+                        } /*REVISARRRRRRRRRRRRRRRRRRRRRRRRRR*/
+
+                        
+                        .grid-list {
+                            position: fixed;
+                            top: 0;
+                            right: -100%; /* Fuera de la pantalla */
+                            width: 50%;
+                            height: 100vh;
+                            background-color: #4a2e69;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content:space-around ;
+                            transition: right 0.3s ease;
+                            color: var(--white-color);
+                            z-index: 1000;
+                            }
+                        
+                        .grid-list.active {
+                            right: 0; /* Mover el menú a la vista */
+                        }
+                        .select-container {
+                            text-align: center; /* Centra elementos en línea dentro del contenedor */
+                        }
+                        
+                        select {
+                            display: inline-block; /* Asegura que respete el `text-align` */
+                        }
+                        #menu-icon {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            z-index: 1001;
+                            font-size: 2rem;
+                         }
+
+
+/* =============================== ESTILOS DE DIV CARD ==================================*/
+.wrapper {
+    width: 300px;
+    height: 500px;
+    background: white;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0;
+    transform: scale(0.95);
+    transition: box-shadow 0.5s, transform 0.5s;
+}
+
+.wrapper:hover {
+        /* GENERA UN EFECTO ZOOM AL HACER HOVER*/
+        transform: scale(1);
+        box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+    }
+
+.container {
+    width: 100%;
+    height: 100%;
+
+        .top {
+            height: 80%;
+            width: 100%;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+    }
+
+img {
+width: 100%;
+height: 100%;
+}
+
+.bottom {
+    width: 200%;
+    height: 20%;
+    transition: transform 0.5s;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    }
+
+p {
+    margin-top: 1rem;
+    }
+
+.left {
+    height: 100%;
+    width: 50%;
+    background: #f4f4f4;
+    position: relative;
+    float: left;
+
+    .details {
+    padding: 20px;
+    float: left;
+    width: calc(70% - 40px);
+    }
+}
+.buy {
+    float: right;
+    width: calc(30% - 2px);
+    height: 100%;
+    transition: 0.5s;
+    border-left: solid thin rgba(0, 0, 0, 0.1);
+
+i {
+    font-size: 30px;
+    color: #000000;
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    }
+
+    &:hover {
+    background: #A6CDDE;
+    }
+
+.right {
+    width: 50%;
+    background: #A6CDDE;
+    color: white;
+    float: right;
+    height: 200%;
+    overflow: hidden;
+            h1,
+            p {
+                color: white;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a2e69;
+    width: 100%;
+    height: 2.5rem;
+    color: var(--white-color);
+}
+@media (min-width: 768px) and (max-width:991px) {
+    
+        .container-grid {
+        display: grid;
+        grid-template-areas: "header nav nav nav"
+        "header section section section"
+        "header section section section"
+        "footer section section section";
+                             min-height: 100vh;
+                             }
+                             .header {
+                                grid-area: header;
+                                max-width: 15rem;
+                             }
+                             .nav {
+                                grid-area: nav;
+                             }
+                             .section {
+                                grid-area: section;
+                             }
+                             .footer {
+                                grid-area: footer;
+                                max-width: 15rem;
+                             }
+                             .section {
+                                display: grid;
+                                grid-template-columns: auto auto;
+                             }
+                            } 
+
+@media (min-width: 992px) {
+    
+        .container-grid {
+        display: grid;
+        grid-template-areas: "header nav nav nav"
+        "header section section section"
+        "header section section section"
+        "footer section section section";
+    min-height: 100vh;}
+    
+
+                             .header {
+                                max-width: 15rem;
+                                grid-area: header;
+                                display: grid;
+                                margin-bottom: 0;
+                                padding: 10px 0;
+                                
+                             }
+                             .nav {
+                                grid-area: nav;
+                             }
+                             .section {
+                                grid-area: section;
+                             }
+                             .footer {
+                                grid-area: footer;
+                                max-width: 15rem;
+                             }
+                                .section {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    
+                             }
+                            }
+                            
